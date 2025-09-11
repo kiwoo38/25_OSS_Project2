@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.html" method="get">
+        <h2>회원가입</h2> <br>
+        <fieldset>
+            <legend>로그인 정보 </legend>
+                <label for="uname">이름: </label>
+                <input type="text" id="uname" name="uname" required placeholder="홍길동"><br>
+
+                <label for="password">비밀번호: </label>
+                <input type="password" id="password" name="password" required minlength="8" placeholder="8자 이상"><br>
+
+        </fieldset>
+
+        <label for="email">이메일: </label>
+        <input type="text" id="email" name="email" list="emailDomains" placeholder="user@naver.com" required>
+        <datalist id="emailDomains">
+            <option value="@gmail.com"></option>
+            <option value="@naver.com"></option>
+            <option value="@kakao.com"></option>
+        </datalist><br>
+
+
+        <label for="mobile">핸드폰 번호: </label>
+        <input type="text" id="mobile" name="mobile" placeholder="010-1234-5678" 
+        pattern="^010-\d{4}-\d{4}$" maxlength="13" required><br><br>
+
+        <label for="gender1">성별: </label>
+        <input type="radio" id="gender1" name="gender" value="M">남
+        <input type="radio" id="gender2" name="gender" value="W">여<br><br>
+        
+        지역선택:
+        <select name="city">
+            <optgroup label="서울">
+                <option value="1">강남구</option>
+                <option value="2">서초구</option>
+                <option value="3">송파구</option>
+            </optgroup>
+            <optgroup label="경기도">
+                <option value="11">성남시</option>
+                <option value="12">수원시</option>
+                <option value="13">용인시</option>
+            </optgroup>
+        </select>
+        <label for="hobby">취미를 선택하세요: </label><br>
+        <select name="hobby" id="hobby" required>
+            <option value="" disabled selected>-- 선택하세요 -- </option>
+            <option value="1">축구</option>
+            <option value="2">야구</option>
+            <option value="3">음악</option>
+            <option value="4">책</option>
+        </select><br>
+        <br>
+        <label for="birthday">생년월일</label><br>
+        <input type="date" id="birthday" name="birthday" required><br>
+        <label for="favoriteColor">선호 색상</label><br>
+        <input type="color" id="favoriteColor" name="favoriteColor"><br>
+
+        <label for ="content">자기소개: </label><br>
+        <textarea name="content" id="content" cols="40" rows="5" placeholder="간단한 자기소개를 입력하세요."></textarea><br>
+        <br>
+        <input type ="submit" vlaue="저장"> <input type="reset" vlaue="새로입력"><br>
+
+    </form>
+    
+</body>
+</html>
