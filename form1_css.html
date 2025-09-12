@@ -6,68 +6,83 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="index.html" method="get">
-        <h2>회원가입</h2> <br>
+    <form action="form_ok.html" method="get"> 
         <fieldset>
-            <legend>로그인 정보 </legend>
-                <label for="uname">이름: </label>
-                <input type="text" id="uname" name="uname" required placeholder="홍길동"><br>
+            <h1>Instagram</h1>
+            <p style="color:rgb(88, 87, 87)">친구들의 사진과 동영상을 보려면 가입하세요.</p><br>
+            <a href="https://www.facebook.com/?locale=ko_KR">Facebook으로 로그인</a><br>
+            <p>------------또는------------</p>
+            <label for="id"></label>
+            <input type="text" id="id" name="id" placeholder="휴대폰 번호 또는 이메일 주소" required><br>
+            <label for="password"></label>
+            <input type="password" id="password" name="password" placeholder="비밀번호"  required minlength="6"><br>
 
-                <label for="password">비밀번호: </label>
-                <input type="password" id="password" name="password" required minlength="8" placeholder="8자 이상"><br>
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="성명" required><br>
+            <label for="username"></label>
+            <input type="text" id="username" name="username" placeholder="사용자 이름" required><br>
+
+
+            <label for="birthday">생년월일: </label><br>
+            <input type ="date" id="birthday" name="birthday" required><br>
+
+            성별:
+            <label>
+            <input type="radio" name="gender" value="male" required>남성
+            </label>
+            <label>
+            <input type="radio" name="gender" value="female" required>여성
+            </label><br>
+
+            <label for="country">국가/지역</label><br>
+            <select id="country" name="country" required>
+                <optgroup label="아시아">
+                    <option value="kr" selected>대한민국</option>
+                    <option value="jp">일본</option>
+                    <option value="cn">중국</option>
+                </optgroup>
+                <optgroup label="유럽">
+                    <option value="po">포르투갈</option>
+                    <option value="fr">프랑스</option>
+                    <option value="en">잉글랜드</option>
+                </optgroup>
+            </select><br>
+
+            <label for="interest">관심사</label><br />
+        <input type="text" id="interest" name="interest" list="interestList" placeholder="예: 사진, 여행, 음악" />
+        <datalist id="interestList">
+            <option value="사진"></option>
+            <option value="여행"></option>
+            <option value="음악"></option>
+            <option value="축구"></option>
+            <option value="코딩"></option>
+        </datalist><br>
+        
+        <label for="content">자기소개</label><br>
+        <textarea name="content" id="content" cols="40" rows="5" placeholder="간단한 자기소개를 해보세요"></textarea><br>
+
+            <label>
+                <input type="checkbox" name="agree" required>
+                이용약관 및 개인정보 처리방침에 동의합니다.
+            </label><br><br>
+
+            <p style="color:rgb(88, 87, 87)">저희 서비스를 이용하는 사람이 회원님의 연락처 정보를 
+                Instagram에 업로드했을 수도 있습니다. <a href="https://www.facebook.com/help/instagram/261704639352628">더 알아보기</a>
+            </p><br><br>
+
+            <input type="submit" value="가입">
+            <input type="reset" value="다시 입력"><br><br>
+    </fieldset>
+
+    
+        <fieldset>
+            <p>계정이 있으신가요?</p><br>
+            <a href="https://www.instagram.com/accounts/login/?source=auth_switcher">로그인</a>
 
         </fieldset>
-
-        <label for="email">이메일: </label>
-        <input type="text" id="email" name="email" list="emailDomains" placeholder="user@naver.com" required>
-        <datalist id="emailDomains">
-            <option value="@gmail.com"></option>
-            <option value="@naver.com"></option>
-            <option value="@kakao.com"></option>
-        </datalist><br>
-
-
-        <label for="mobile">핸드폰 번호: </label>
-        <input type="text" id="mobile" name="mobile" placeholder="010-1234-5678" 
-        pattern="^010-\d{4}-\d{4}$" maxlength="13" required><br><br>
-
-        <label for="gender1">성별: </label>
-        <input type="radio" id="gender1" name="gender" value="M">남
-        <input type="radio" id="gender2" name="gender" value="W">여<br><br>
+            
         
-        지역선택:
-        <select name="city">
-            <optgroup label="서울">
-                <option value="1">강남구</option>
-                <option value="2">서초구</option>
-                <option value="3">송파구</option>
-            </optgroup>
-            <optgroup label="경기도">
-                <option value="11">성남시</option>
-                <option value="12">수원시</option>
-                <option value="13">용인시</option>
-            </optgroup>
-        </select>
-        <label for="hobby">취미를 선택하세요: </label><br>
-        <select name="hobby" id="hobby" required>
-            <option value="" disabled selected>-- 선택하세요 -- </option>
-            <option value="1">축구</option>
-            <option value="2">야구</option>
-            <option value="3">음악</option>
-            <option value="4">책</option>
-        </select><br>
-        <br>
-        <label for="birthday">생년월일</label><br>
-        <input type="date" id="birthday" name="birthday" required><br>
-        <label for="favoriteColor">선호 색상</label><br>
-        <input type="color" id="favoriteColor" name="favoriteColor"><br>
-
-        <label for ="content">자기소개: </label><br>
-        <textarea name="content" id="content" cols="40" rows="5" placeholder="간단한 자기소개를 입력하세요."></textarea><br>
-        <br>
-        <input type ="submit" vlaue="저장"> <input type="reset" vlaue="새로입력"><br>
-
+        
     </form>
-    
 </body>
 </html>
