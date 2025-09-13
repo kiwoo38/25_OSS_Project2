@@ -5,13 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .divider{
+        display:flex;
+        align-items: center;
+        text-align: center;
+        color:#888;
+        font-weight: bold;
+    }
+    .divider::before,.divider::after{
+        content:"";
+        flex:1;
+        border-bottom: 1px solid #ccc;
+    }
+    .divider:not(:empty)::before{
+        margin-right:10px;
+
+    }
+    .divider:not(:empty)::after{
+        margin-left:10px;
+    }
+    .fb-login{
+        display:inline-flex;
+        align-items:center;
+        background-color: #1c6fdd;
+        color:white;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        padding:10px 20px;
+        border-radius: 15px;
+        text-decoration: none;
+    }
+    .fb-login:hover{
+        background-color: #054fb0;
+    }
+    .fb-icon{
+        width:20px;
+        height:20px;
+        margin-right: 8px;
+        
+    }
+
+</style>
+
 <body>
-    <form action="form_ok.html" method="get"> 
+    <form method="get"> 
         <fieldset>
-            <h1>Instagram</h1>
+            <h1 class="title">Instagram</h1>
             <p style="color:rgb(88, 87, 87)">친구들의 사진과 동영상을 보려면 가입하세요.</p><br>
-            <a href="https://www.facebook.com/?locale=ko_KR">Facebook으로 로그인</a><br>
-            <p>------------또는------------</p>
+            <a href="https://www.facebook.com/?locale=ko_KR" class="fb-login">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="fb-icon">
+                    Facebook으로 로그인
+            </a><br>
+
+            <div class="divider">또는</div>
+
             <label for="id"></label>
             <input type="text" id="id" name="id" placeholder="휴대폰 번호 또는 이메일 주소" required><br>
             <label for="password"></label>
