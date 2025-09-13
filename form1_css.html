@@ -6,6 +6,60 @@
     <title>Document</title>
 </head>
 <style>
+    /* 인스타 로고 느낌 폰트 (무료, Google Fonts) */
+    @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+    
+    html,body{
+        height:100%;
+        margin:0;
+        display:grid;
+        place-items:center;
+        font-family:Arial, sans-serif;
+    }
+    form{
+        width:350px;
+        margin:20px 0 20px;
+    }
+    fieldset{
+        border:1px solid rgba(67, 66, 66, 0.566);
+        padding: 24px 32px;
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .title{
+        text-align:center;
+        font-family:"Grand Hotel", cursive;
+        font-size:40px;
+        font-weight: bold;
+        margin: 20px 0 20px;
+    }
+    .subtitle{
+        color:#a09f9f;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .fb-login{
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        background-color: #1c6fdd;
+        color:white;
+        font-weight: bold;
+        padding:5px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        margin: 20px 7;
+    }
+    .fb-login:hover{
+        background-color: #054fb0;
+    }
+    .fb-icon{
+        width:20px;
+        height:20px;
+        margin-right: 8px;
+    }
+
     .divider{
         display:flex;
         align-items: center;
@@ -19,32 +73,49 @@
         border-bottom: 1px solid #ccc;
     }
     .divider:not(:empty)::before{
-        margin-right:10px;
+        margin-right:20px;
 
     }
     .divider:not(:empty)::after{
-        margin-left:10px;
+        margin-left:20px;
     }
-    .fb-login{
-        display:inline-flex;
-        align-items:center;
-        background-color: #1c6fdd;
-        color:white;
-        font-weight: bold;
-        font-family: Arial, sans-serif;
-        padding:10px 20px;
-        border-radius: 15px;
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    select,
+    textarea{
+        width:96%;
+        margin: 6px 0;
+        padding: 10px 10px;
+    }
+
+    input[type="submit"],input[type="reset"]{
+        width:50%;
+        text-align: center;
+        border: none;
+        background-color:#1c6fdd;
+        border-radius: 8px;
+        padding: 10px;
+        cursor:pointer
+    }
+    .notice{
+        color:rgb(88, 87, 87);
         text-decoration: none;
+        font-weight: 500;
     }
-    .fb-login:hover{
-        background-color: #054fb0;
+    fieldset:last-of-type{
+        text-align: center;
     }
-    .fb-icon{
-        width:20px;
-        height:20px;
-        margin-right: 8px;
-        
+    .login{
+        text-align: center;
     }
+    .loginstyle{
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block; /* 부모의 text-align:center 와 함께 정확히 중앙 */
+        margin-top:0;
+    }
+    
 
 </style>
 
@@ -52,7 +123,7 @@
     <form method="get"> 
         <fieldset>
             <h1 class="title">Instagram</h1>
-            <p style="color:rgb(88, 87, 87)">친구들의 사진과 동영상을 보려면 가입하세요.</p><br>
+            <p class="subtitle" style="color:rgb(88, 87, 87)">친구들의 사진과 동영상을 보려면 가입하세요.</p><br>
             <a href="https://www.facebook.com/?locale=ko_KR" class="fb-login">
                 <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="fb-icon">
                     Facebook으로 로그인
@@ -114,7 +185,7 @@
                 이용약관 및 개인정보 처리방침에 동의합니다.
             </label><br><br>
 
-            <p style="color:rgb(88, 87, 87)">저희 서비스를 이용하는 사람이 회원님의 연락처 정보를 
+            <p class="notice">저희 서비스를 이용하는 사람이 회원님의 연락처 정보를 
                 Instagram에 업로드했을 수도 있습니다. <a href="https://www.facebook.com/help/instagram/261704639352628">더 알아보기</a>
             </p><br><br>
 
@@ -124,8 +195,8 @@
 
     
         <fieldset>
-            <p>계정이 있으신가요?</p><br>
-            <a href="https://www.instagram.com/accounts/login/?source=auth_switcher">로그인</a>
+            <p class="login">계정이 있으신가요?</p><br>
+            <a class="loginstyle" href="https://www.instagram.com/accounts/login/?source=auth_switcher">로그인</a>
 
         </fieldset>
             
